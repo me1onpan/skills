@@ -58,7 +58,7 @@ No. One invocation, one ticket. Batch dispatch across a ticket queue and [subage
 
 **Does it commit or open a pull request?**
 
-Neither is built in. It leaves the changes staged so you can inspect them, then commit and open a pull request when ready.
+Neither is built in. It leaves the changes staged so you can inspect them. If you want help drafting the commit message, manually invoke [commit-message](https://aihero.dev/skills-commit-message) with `/commit-message`: it reads the entire staging area and drafts Conventional Commit messages, suggesting separate commits for independent changes. It only generates messages; committing and opening a pull request are separate follow-up actions.
 
 **`code-review` says it cannot see my changes.**
 
