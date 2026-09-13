@@ -1,0 +1,5 @@
+interface:
+  display_name: "Commit Message"
+  short_description: "Draft commit messages from staged changes"
+policy:
+  allow_implicit_invocation: false
