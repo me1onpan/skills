@@ -58,7 +58,7 @@ Not with `/implement`: one invocation, one ticket. For a whole spec in one run, 
 
 **Does it commit or open a pull request?**
 
-Neither is built in. It leaves the changes staged so you can inspect them, then commit and open a pull request when ready. When the agent does write the PR, [pr](https://aihero.dev/skills-pr) shapes its body.
+Neither is built in. It leaves the changes staged so you can inspect them. If you want help drafting the commit message, manually invoke [commit-message](https://aihero.dev/skills-commit-message) with `/commit-message`: it reads the entire staging area and drafts Conventional Commit messages, suggesting separate commits for independent changes. It only generates messages; committing and opening a pull request are separate follow-up actions. When the agent does write the PR, [pr](https://aihero.dev/skills-pr) shapes its body.
 
 **`code-review` says it cannot see my changes.**
 
