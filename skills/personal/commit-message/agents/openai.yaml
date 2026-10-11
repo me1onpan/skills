@@ -1,0 +1,3 @@
+interface:
+  display_name: "Commit Message"
+  short_description: "Write a commit message with every line within 100 columns"
