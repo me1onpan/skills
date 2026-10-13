@@ -1,14 +1,17 @@
-"""Report commit message lines wider than 100 display columns.
+"""Report commit message lines wider than 72 display columns.
 
 Reads the message from stdin. Wide and full-width characters (CJK,
-full-width punctuation) count 2 columns, everything else 1. Exits 1 when
+full-width punctuation) count 2 columns, everything else 1. Lines
+containing a URL are exempt, since a URL cannot be wrapped. Exits 1 when
 any line is too wide.
 """
 
+import re
 import sys
 import unicodedata
 
-LIMIT = 100
+LIMIT = 72
+URL = re.compile(r"https?://")
 
 
 def width(line: str) -> int:
@@ -20,6 +23,8 @@ def main() -> int:
     sys.stdout.reconfigure(encoding="utf-8")
     too_wide = False
     for number, line in enumerate(sys.stdin.read().splitlines(), start=1):
+        if URL.search(line):
+            continue
         w = width(line)
         if w > LIMIT:
             too_wide = True
